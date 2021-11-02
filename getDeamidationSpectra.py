@@ -26,7 +26,7 @@ def getDeamidationSpectra(file_name,time_int,charge,peak_count,save=False,conf=0
     ins_d0_r = np.array([iso.getIntensity() for iso in ins_d0.getIsotopeDistribution(CoarseIsotopePatternGenerator(peak_count)).getContainer()]+[0])
     ins_d1_r = np.array([0]+[iso.getIntensity() for iso in ins_d1.getIsotopeDistribution(CoarseIsotopePatternGenerator(peak_count)).getContainer()])
     
-    #Finds the index of the most abundande peak for normal HI, to use as normailization peak
+    #Finds the index of the most abundant peak for normal HI, to use as normailization peak
     norm_bp = np.argmax(ins_d0_r)
     
     #Function to fit, takes d as argument, the fraction of deamidated, and return the combined isotopic pattern
